@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout code') {
       steps {
-        git(url: 'https://github.com/ttendaim/website', branch: 'main')
+        git(url: 'https://github.com/ttendaim/curriculum-front', branch: 'main')
       }
     }
 
@@ -17,10 +17,16 @@ pipeline {
 
         stage('Front-End Unit test ') {
           steps {
-            sh 'npm i && npm run test:unit'
+            sh 'cd curriculum-front && npm i && npm run test:unit'
           }
         }
 
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'docker build -f '
       }
     }
 
