@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout code') {
       steps {
-        git(url: 'https://github.com/ttendaim', branch: 'website')
+        git(url: 'https://github.com/ttendaim/website', branch: 'main')
       }
     }
 
